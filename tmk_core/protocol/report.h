@@ -340,6 +340,11 @@ void clear_keys_from_report(void);
 bool has_mouse_report_changed(report_mouse_t* new_report, report_mouse_t* old_report);
 #endif
 
+#ifdef APPLE_FN_ENABLE
+void add_apple_fn(report_keyboard_t* keyboard_report);
+void del_apple_fn(report_keyboard_t* keyboard_report);
+#endif
+
 #ifdef __cplusplus
 }
 #endif
