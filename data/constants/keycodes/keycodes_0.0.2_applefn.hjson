@@ -1,0 +1,11 @@
+{
+    "keycodes": {
+        "0x5300": {
+            "group": "apple_fn",
+            "key": "QK_APPLE_FN",
+            "aliases": [
+                "AP_FN"
+            ]
+        }
+    }
+}
