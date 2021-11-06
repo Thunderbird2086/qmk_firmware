@@ -300,3 +300,13 @@ __attribute__((weak)) bool has_mouse_report_changed(report_mouse_t* new_report, 
     return changed;
 }
 #endif
+
+#ifdef APPLE_FN_ENABLE
+void add_apple_fn(report_keyboard_t* keyboard_report) {
+    keyboard_report->reserved = 1;
+}
+
+void del_apple_fn(report_keyboard_t* keyboard_report) {
+    keyboard_report->reserved = 0;
+}
+#endif
