@@ -801,6 +801,31 @@ ifeq ($(strip $(UNICODE_COMMON)), yes)
            $(QUANTUM_DIR)/unicode/utf8.c
 endif
 
+ifeq ($(strip $(APPLE_FN_ENABLE)), yes)
+    OPT_DEFS += -DAPPLE_FN_ENABLE
+endif
+
+MAGIC_ENABLE ?= yes
+ifeq ($(strip $(MAGIC_ENABLE)), yes)
+    SRC += $(QUANTUM_DIR)/process_keycode/process_magic.c
+    OPT_DEFS += -DMAGIC_KEYCODE_ENABLE
+endif
+
+SEND_STRING_ENABLE ?= yes
+ifeq ($(strip $(SEND_STRING_ENABLE)), yes)
+    OPT_DEFS += -DSEND_STRING_ENABLE
+    COMMON_VPATH += $(QUANTUM_DIR)/send_string
+    SRC += $(QUANTUM_DIR)/send_string/send_string.c
+endif
+
+ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes)
+    SRC += $(QUANTUM_DIR)/process_keycode/process_auto_shift.c
+    OPT_DEFS += -DAUTO_SHIFT_ENABLE
+    ifeq ($(strip $(AUTO_SHIFT_MODIFIERS)), yes)
+        OPT_DEFS += -DAUTO_SHIFT_MODIFIERS
+    endif
+endif
+
 ifeq ($(strip $(PS2_MOUSE_ENABLE)), yes)
     PS2_ENABLE := yes
     MOUSE_ENABLE := yes
