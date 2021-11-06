@@ -242,6 +242,12 @@ void del_key_bit(report_nkro_t* nkro_report, uint8_t code) {
  * FIXME: Needs doc
  */
 void add_key_to_report(uint8_t key) {
+#ifdef APPLE_FN_ENABLE
+    if IS_APPLE_FN(key) {
+        keyboard_report->reserved = 1;
+        return;
+    }
+#endif
 #ifdef NKRO_ENABLE
     if (keyboard_protocol && keymap_config.nkro) {
         add_key_bit(nkro_report, key);
@@ -256,6 +262,12 @@ void add_key_to_report(uint8_t key) {
  * FIXME: Needs doc
  */
 void del_key_from_report(uint8_t key) {
+#ifdef APPLE_FN_ENABLE
+    if IS_APPLE_FN(key) {
+        keyboard_report->reserved = 0;
+        return;
+    }
+#endif
 #ifdef NKRO_ENABLE
     if (keyboard_protocol && keymap_config.nkro) {
         del_key_bit(nkro_report, key);
