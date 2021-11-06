@@ -555,6 +555,18 @@ void process_action(keyrecord_t *record, action_t action) {
             }
             break;
 #endif // EXTRAKEY_ENABLE
+#ifdef APPLE_FN_ENABLE
+        /* Apple Fn */
+        case ACT_APPLE_FN:
+            if (event.pressed) {
+                add_apple_fn(keyboard_report);
+                send_keyboard_report();
+            } else {
+                del_apple_fn(keyboard_report);
+                send_keyboard_report();
+            }
+            break;
+#endif
         /* Mouse key */
         case ACT_MOUSEKEY:
             register_mouse(action.key.code, event.pressed);
@@ -1191,6 +1203,9 @@ void debug_action(action_t action) {
             break;
         case ACT_USAGE:
             ac_dprintf("ACT_USAGE");
+            break;
+        case ACT_APPLE_FN:
+            dprint("ACT_APPLE_FN");
             break;
         case ACT_MOUSEKEY:
             ac_dprintf("ACT_MOUSEKEY");
