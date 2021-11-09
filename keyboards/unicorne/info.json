@@ -1,0 +1,33 @@
+{
+    "keyboard_name": "uniCorne",
+    "manufacturer": "Thunderbird2086",
+    "maintainer": "Allen Choi",
+    "bootloader": "caterina",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "lto": true
+    },
+    "split": {
+        "enabled": true,
+        "soft_serial_pin": "D2"
+    },
+    "processor": "atmega32u4",
+    "url": "",
+    "usb": {
+        "device_version": "1.0.0",
+        "pid": "0x2086",
+        "vid": "0xFEED"
+    },
+    "rgb_matrix": {
+        "driver": "ws2812"
+    },
+    "ws2812": {
+        "pin": "D3"
+    }
+}
