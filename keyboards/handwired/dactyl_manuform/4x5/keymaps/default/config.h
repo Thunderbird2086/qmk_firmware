@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CTL_BSPC CTL_T(KC_BSPC)
 #define ALT_SPC  ALT_T(KC_SPC)
 #define SFT_ENT  SFT_T(KC_ENT)
+#define CMD_F2   LGUI(KC_F2)
 
 #define KC_ML KC_MS_LEFT
 #define KC_MR KC_MS_RIGHT

@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x05ac
-#define MANUFACTURER "Apple Computer, Inc."
+#define MANUFACTURER Apple Inc.
 
 /* mouse config */
 #define MOUSEKEY_INTERVAL    20
