@@ -1,6 +1,6 @@
 # YD3xn15mx
 
-![YD3xn15mx](https://i.imgur.com/RdrcBlb.jpg)
+![YD3xn15mx](https://i.imgur.com/RdrcBlbl.jpg)
 
 * A macro keyboard with 15 keys and 3 encoders
 
@@ -10,11 +10,11 @@
 
 Make example for this keyboard (after setting up your build environment):
 
-    make YD3xn15mx:default
+    make yd3xn15mx:default
 
 Flashing example for this keyboard:
 
-    make YD3xn15mx:default:flash
+    make yd3xn15mx:default:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
