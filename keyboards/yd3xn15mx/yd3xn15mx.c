@@ -1,7 +1,7 @@
 // Copyright 2022 Thunderbird2086 (Thunderbird2086)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "YD3xn15mx.h"
+#include "yd3xn15mx.h"
 
 
 #ifdef RGB_MATRIX_ENABLE
@@ -15,9 +15,8 @@
   // 07 12 13 18 19      1
   // 24             27
   // 08 11 14 17 20      2
-  //
-  // 09 10 15 16 21      3
   //    23       22
+  // 09 10 15 16 21      3
   //
   // Physical Layout
   // Columns
@@ -27,9 +26,8 @@
   // 07 12 13 18 19      1
   // 24             27
   // 08 11 14 17 20      2
-  //
-  // 09 10 15 16 21      3
   //    23       22
+  // 09 10 15 16 21      3
 
 #define LED_LAYOUT( \
     L06, L05, L04, L03, L02, L01, \
@@ -60,13 +58,13 @@ led_config_t g_led_config = { {
     {       5,       4, NO_LED,      1,      0 },
 }, LED_LAYOUT (
     // LED Index to Physical Position
-    POS(  16,   0 ), POS(  48,   0 ), POS(  96,   0 ), POS( 128,   0 ), POS( 170,   0 ), POS( 200,  0 ),
+    POS(  22,   0 ), POS(  44,   0 ), POS(  90,   0 ), POS( 134,   0 ), POS( 179,   0 ), POS( 201,  0 ),
     POS(   0,  32 ),                                                    POS( 224,  32 ),
-    POS(   0,  32 ), POS(  56,  32 ), POS( 112,  32 ), POS( 168,  32 ), POS( 224,  32 ),
+    POS(   0,  32 ), POS(  68,  32 ), POS( 112,  32 ), POS( 157,  32 ), POS( 224,  32 ),
     POS(   0,  48 ),                                                    POS( 224,  48 ),
-    POS(   0,  48 ), POS(  56,  48 ), POS( 112,  48 ), POS( 168,  48 ), POS( 224,  48 ),
-    POS(   0,  64 ),                                                    POS( 224,  64 ), 
-    POS(   0,  64 ), POS(  56,  64 ), POS( 112,  64 ), POS( 168,  64 ), POS( 224,  64 )
+    POS(   0,  48 ), POS(  68,  48 ), POS( 112,  48 ), POS( 157,  48 ), POS( 224,  48 ),
+    POS(  44,  64 ),                                                    POS( 179,  64 ), 
+    POS(   0,  64 ), POS(  68,  64 ), POS( 112,  64 ), POS( 157,  64 ), POS( 224,  64 )
 ), LED_LAYOUT(
     // LED Index to Flag
     LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
@@ -77,14 +75,4 @@ led_config_t g_led_config = { {
     LED_FLAG_UNDERGLOW,                                                         LED_FLAG_UNDERGLOW,
     LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT
 ) };
-
-void suspend_power_down_kb(void) {
-    rgb_matrix_set_suspend_state(true);
-    suspend_power_down_user();
-}
-
-void suspend_wakeup_init_kb(void) {
-    rgb_matrix_set_suspend_state(false);
-    suspend_wakeup_init_user();
-}
 #endif
