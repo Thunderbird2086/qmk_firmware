@@ -559,9 +559,9 @@ void process_action(keyrecord_t *record, action_t action) {
         /* Apple Fn */
         case ACT_APPLE_FN:
             if (event.pressed) {
-                register_code(KC_APPLE_FN);
+                register_code(KC_GLOBE);
             } else {
-                unregister_code(KC_APPLE_FN);
+                unregister_code(KC_GLOBE);
             }
             break;
 #endif
