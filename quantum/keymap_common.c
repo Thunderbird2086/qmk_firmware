@@ -72,7 +72,7 @@ action_t action_for_keycode(uint16_t keycode) {
             break;
 #endif
 #ifdef APPLE_FN_ENABLE
-        case KC_APPLE_FN:
+        case KC_GLOBE:
             action.code = ACTION_APPLE_FN();
             break;
 #endif

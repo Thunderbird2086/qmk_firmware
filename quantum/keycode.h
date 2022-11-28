@@ -49,4 +49,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "modifiers.h"
 
 /* Apple Fn */
-#define KC_APFN KC_APPLE_FN
+#define KC_APFN KC_GLOBE
