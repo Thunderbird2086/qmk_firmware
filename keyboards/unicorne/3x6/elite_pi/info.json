@@ -1,0 +1,19 @@
+{
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+    "split": {
+        "soft_serial_pin": "GP1"
+    },
+    "url": "",
+    "usb": {
+        "pid": "0x1982"
+    },
+    "matrix_pins": {
+        "cols": [ "GP29", "GP28", "GP27", "GP26", "GP22", "GP20" ],
+        "rows": [ "GP4", "GP5", "GP6", "GP7" ]
+    },
+    "ws2812": {
+        "pin": "GP0",
+        "driver": "vendor"
+    }
+}
