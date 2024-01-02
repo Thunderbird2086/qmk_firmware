@@ -14,11 +14,18 @@
         "mousekey": true,
         "nkro": true,
         "rgblight": false,
-        "rgbmatrix": true,
-        "lto": true
+        "rgb_matrix": true
     },
     "split": {
-        "enabled": true
+        "enabled": true,
+        "transport": {
+            "sync": {
+                "matrix_state": true
+            }
+        },
+        "usb_detect": {
+            "enabled": true
+        }
     },
     "rgblight": {
         "default": {
@@ -26,16 +33,82 @@
         },
         "hue_steps": 16,
         "saturation_steps": 32,
-        "brightness_steps": 32
+        "brightness_steps": 32,
+        "layers": {
+            "enabled": true
+        },
+        "animations": {
+            "altering": true,
+            "breathing": true,
+            "christmas": true,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": true,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": true
+        }
     },
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
+            "animation": "solid_color",
             "val": 150
         },
         "hue_steps": 32,
         "sat_steps": 64,
         "val_steps": 64,
-        "spd_steps": 20
+        "spd_steps": 20,
+        "animations": {
+            "alphas_mods": true,
+            "gradient_up_down": true,
+            "gradient_left_right": true,
+            "breathing": true,
+            "band_sat": true,
+            "band_val": true,
+            "band_pinwheel_sat": true,
+            "band_pinwheel_val": true,
+            "band_spiral_sat": true,
+            "band_spiral_val": true,
+            "cycle_all": true,
+            "cycle_left_right": true,
+            "cycle_up_down": true,
+            "rainbow_moving_chevron": true,
+            "cycle_out_in": true,
+            "cycle_out_in_dual": true,
+            "cycle_pinwheel": true,
+            "cycle_spiral": true,
+            "dual_beacon": true,
+            "rainbow_beacon": true,
+            "rainbow_pinwheels": true,
+            "flower_blooming": true,
+            "raindrops": true,
+            "jellybean_raindrops": true,
+            "hue_breathing": true,
+            "hue_pendulum": true,
+            "hue_wave": true,
+            "pixel_fractal": true,
+            "pixel_flow": true,
+            "pixel_rain": true,
+            "starlight": true,
+            "starlight_dual_hue": true,
+            "starlight_dual_sat": true,
+            "riverflow": true,
+            "typing_heatmap": true,
+            "digital_rain": true,
+            "solid_reactive_simple": true,
+            "solid_reactive": true,
+            "solid_reactive_wide": true,
+            "solid_reactive_multiwide": true,
+            "solid_reactive_cross": true,
+            "solid_reactive_multicross": true,
+            "solid_reactive_nexus": true,
+            "solid_reactive_multinexus": true,
+            "splash": true,
+            "multisplash": true,
+            "solid_splash": true,
+            "solid_multisplash": true
+        }
     }
 }
