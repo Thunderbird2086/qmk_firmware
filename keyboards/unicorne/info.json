@@ -27,29 +27,6 @@
             "enabled": true
         }
     },
-    "rgblight": {
-        "default": {
-            "val": 150
-        },
-        "hue_steps": 16,
-        "saturation_steps": 32,
-        "brightness_steps": 32,
-        "layers": {
-            "enabled": true
-        },
-        "animations": {
-            "altering": true,
-            "breathing": true,
-            "christmas": true,
-            "knight": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "rgb_test": true,
-            "snake": true,
-            "static_gradient": true,
-            "twinkle": true
-        }
-    },
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
