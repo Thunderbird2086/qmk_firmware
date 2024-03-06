@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "quantum.h"
 
-static char keylogs_str[5] = {"\n"};
+static char keylogs_str[5] = {};
 
 const char code_to_name[60] = {
     ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
