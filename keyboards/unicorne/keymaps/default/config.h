@@ -20,34 +20,6 @@
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 
-#if defined(APPLE_FN_ENABLE)
-/* USB Device descriptor parameter */
-#   if defined(VENDOR_ID)
-#      undef   VENDOR_ID
-#      define  VENDOR_ID    0x05ac
-#   endif
-
-#   if defined(PRODUCT_ID)
-#      undef   PRODUCT_ID
-#      define  PRODUCT_ID   0x021E
-#   endif
-
-#   if defined(DEVICE_VER)
-#      undef   DEVICE_VER
-#      define  DEVICE_VER   0x0931
-#   endif
-
-#   if defined(MANUFACTURER)
-#      undef   MANUFACTURER
-#      define  MANUFACTURER "Apple Inc."
-#   endif
-
-#   if defined(PRODUCT)
-#      undef   PRODUCT
-#      define PRODUCT "Aluminum Mini Keyboard (ISO)"
-#   endif
-#endif
-
 // #define RGB_LAYER_ENABLE
 
 #define VER_NEWLINE_WAIT 200 // in milliseconds
