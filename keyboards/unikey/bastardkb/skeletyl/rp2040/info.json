@@ -1,0 +1,16 @@
+{
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+    "split": {
+        "soft_serial_pin": "GP1"
+    },
+    "url": "",
+    "matrix_pins": {
+        "cols": [ "GP28", "GP21", "GP6", "GP7", "GP8" ],
+        "rows": [ "GP26", "GP5", "GP4", "GP9" ]
+    },
+    "ws2812": {
+        "pin": "GP0",
+        "driver": "vendor"
+    }
+}
