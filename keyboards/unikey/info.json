@@ -53,7 +53,7 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
-            "animation": "solid_color",
+            "animation": "alphas_mods",
             "val": 150
         },
         "hue_steps": 32,

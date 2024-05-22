@@ -28,6 +28,7 @@
         }
     },
     "rgblight": {
+        "max_brightness": 150,
         "default": {
             "val": 150
         },
@@ -53,9 +54,10 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
-            "animation": "solid_color",
+            "animation": "alphas_mods",
             "val": 150
         },
+        "max_brightness": 150,
         "hue_steps": 32,
         "sat_steps": 64,
         "val_steps": 64,
