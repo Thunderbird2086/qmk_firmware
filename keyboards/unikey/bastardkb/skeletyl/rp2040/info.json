@@ -6,8 +6,8 @@
     },
     "url": "",
     "matrix_pins": {
-        "cols": [ "GP28", "GP21", "GP6", "GP7", "GP8" ],
-        "rows": [ "GP26", "GP5", "GP4", "GP9" ]
+        "cols": [ "GP27", "GP28", "GP21", "GP6", "GP7" ],
+        "rows": [ "GP29", "GP26", "GP5", "GP4" ]
     },
     "ws2812": {
         "pin": "GP0",
