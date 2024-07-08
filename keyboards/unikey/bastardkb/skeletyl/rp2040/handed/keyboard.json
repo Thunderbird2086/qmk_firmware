@@ -1,7 +1,7 @@
 {
     "split": {
         "handedness": {
-            "pin": "GP16"
+            "pin": "GP15"
         }
     },
     "usb": {
