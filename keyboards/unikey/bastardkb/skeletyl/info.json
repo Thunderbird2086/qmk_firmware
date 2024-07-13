@@ -3,7 +3,6 @@
         "device_version": "0.3.5"
     },
     "rgb_matrix": {
-        "max_brightness": 180,
         "sleep": true,
         "led_count": 36,
         "split_count": [18, 18],
@@ -47,7 +46,6 @@
         ]
     },
     "rgblight": {
-        "max_brightness": 50,
         "led_count": 36,
         "split_count": [18, 18]
     },
