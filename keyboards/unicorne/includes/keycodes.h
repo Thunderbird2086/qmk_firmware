@@ -41,3 +41,14 @@
 #define M_LCMD_T    MT(MOD_LGUI, KC_T)
 #define RCMD_N      MT(MOD_RGUI, KC_N)
 #define RCMD_J      MT(MOD_RGUI, KC_J)
+
+// zoom
+#define Z_CHAT      LSFT(LCMD(KC_H)) 
+#define Z_WHOS      LCMD(KC_U)
+#define Z_VIEW      LSFT(LCMD(KC_W)) 
+#define Z_DUAL      LSFT(LCMD(KC_D))
+
+#define Z_AUDIO     LSFT(LCMD(KC_A)) 
+#define Z_VIDEO     LSFT(LCMD(KC_V)) 
+#define Z_HAND      LOPT(KC_Y) 
+#define Z_SHARE     LSFT(LCMD(KC_S)) 
