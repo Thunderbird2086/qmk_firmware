@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-      * │   │   │   │   │   │       │   │   │   │   │   │
+      * │Cha│Who│Vie│Dua│   │       │   │Mut│Cam│Han│Sha│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │OPT│SFT│CTL│CMD│   │       │Ins│Lef│UP │Rig│PU │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_NAV] = LAYOUT_split_3x5_3(
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,
+        Z_CHAT,    Z_WHOS,    Z_VIEW,    Z_DUAL,    KC_NO,                                KC_NO,     Z_AUDIO,   Z_VIDEO,   Z_HAND,    Z_SHARE,
         KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_INS,    KC_LEFT,   KC_UP,     KC_RIGHT,  KC_PGUP,
         KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_HOME,   KC_DOWN,   KC_END,    KC_PGDN,
                                          NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
