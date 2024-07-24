@@ -1,11 +1,26 @@
 // Copyright 2023 Thunderbird2086 (@Thunderbird2086)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#ifdef OLED_ENABLE
 
 #include "quantum.h"
 #include "includes/font_util.h"
 
+
+#if defined(QWERTY_ENABLE)
+__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+    return true;
+}
+#endif // QWERTY_ENABLE
+
+
+#if defined(SECRETS_ENABLE)
+__attribute__((weak)) bool process_record_screts(uint16_t keycode, keyrecord_t *record) {
+    return true;
+} 
+#endif // SECRETS_ENABLE
+
+
+#if defined(OLED_ENABLE)
 oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
 }
@@ -28,6 +43,11 @@ __attribute__((weak)) bool is_feature_layer(void) {
 __attribute__((weak)) bool should_oled_off(void) {
     return false;
 }
+
+
+__attribute__((weak)) bool process_record_oled(uint16_t keycode, keyrecord_t *record) {
+    return true;
+} 
 
 
 void render_mod_status(void) {
@@ -136,9 +156,19 @@ bool oled_task_kb(void) {
     }
     return false;
 }
+#endif // OLED_ENABLE
 
 
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    return process_record_user(keycode, record);
+    return process_record_user(keycode, record)
+#       if defined(QWERTY_ENABLE)
+        && process_record_keymap(keycode, record)
+#       endif // QWERTY_ENABLE
+#       if defined(SECRETS_ENABLE)
+        && process_record_secrets(keycode, record)
+#       endif // SECRETS_ENABLE
+#       if defined(OLED_ENABLE)
+        && process_record_oled(keycode, record)
+#       endif // OLED_ENABLE
+        ;
 }
-#endif // OLED_ENABLE
