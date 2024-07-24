@@ -7,7 +7,7 @@
 enum custom_keycodes {
     // Layer Macros
     COLEMAK = QK_USER,
-#if defined(QWERTY_ENABLED)
+#if defined(QWERTY_ENABLE)
     QWERTY,
 #   endif
     CODE,
@@ -32,7 +32,7 @@ enum custom_keycodes {
 
 enum layers {
     _COLEMAK,
-#if defined(QWERTY_ENABLED)
+#if defined(QWERTY_ENABLE)
     _QWERTY,
 #   endif
     _CODE,
