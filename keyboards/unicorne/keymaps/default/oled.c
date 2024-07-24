@@ -14,7 +14,7 @@ bool is_feature_layer(void) {
 
 static uint32_t key_timer  = 0;
 static bool is_key_processed = true;
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_oled(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         key_timer = timer_read32();
         is_key_processed = true;
