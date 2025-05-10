@@ -3,7 +3,7 @@
     "manufacturer": "Thunderbird2086",
     "maintainer": "Allen Choi",
     "usb": {
-        "vid": "0xFEED"
+        "vid": "0x4143"
     },
     "diode_direction": "COL2ROW",
     "features": {
