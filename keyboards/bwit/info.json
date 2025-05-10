@@ -1,9 +1,8 @@
 {
-    "keyboard_name": "uniKey",
-    "manufacturer": "Thunderbird2086",
+    "manufacturer": "BWIT",
     "maintainer": "Allen Choi",
     "usb": {
-        "vid": "0x4143"
+        "vid": "0x4242"
     },
     "diode_direction": "COL2ROW",
     "features": {
@@ -15,41 +14,6 @@
         "nkro": true,
         "rgblight": false,
         "rgb_matrix": true
-    },
-    "split": {
-        "enabled": true,
-        "transport": {
-            "sync": {
-                "matrix_state": true
-            }
-        },
-        "usb_detect": {
-            "enabled": true
-        }
-    },
-    "rgblight": {
-        "default": {
-            "val": 150
-        },
-        "max_brightness": 150,
-        "hue_steps": 16,
-        "saturation_steps": 32,
-        "brightness_steps": 32,
-        "layers": {
-            "enabled": true
-        },
-        "animations": {
-            "altering": true,
-            "breathing": true,
-            "christmas": true,
-            "knight": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "rgb_test": true,
-            "snake": true,
-            "static_gradient": true,
-            "twinkle": true
-        }
     },
     "rgb_matrix": {
         "driver": "ws2812",
