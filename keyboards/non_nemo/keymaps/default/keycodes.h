@@ -15,6 +15,7 @@ enum custom_keycodes {
     NAV,
     MEDIA,
     MOUSE,
+    ADJUST,
     VRSN,
 #if defined(SECRETS_ENABLE)
     // Secret Macros
@@ -37,6 +38,7 @@ enum layers {
     _NAV,
     _MEDIA,
     _MOUSE,
+    _ADJUST,
 #   if defined(SECRETS_ENABLE)
     _SECRET,
 #   endif
@@ -54,6 +56,7 @@ enum layers {
 #define MED_DEL     LT(_MEDIA   , KC_DEL)
 
 #define MOU_ESC     LT(_MOUSE   , KC_ESC)
+#define ADJ_SPC     LT(_ADJUST  , KC_SPC)
 
 // Shortcut Keys
 #define K_BACK      LCMD(KC_LBRC)           // browser back

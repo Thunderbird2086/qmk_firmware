@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
      /*
       * ┌───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┐
-      * │PWR│SLP│WAK│   │   │               │R.T│R.M│LOK│R.R│Res│
+      * │PWR│SLP│WAK│   │   │               │R.T│R.M│LOK│R.R│   │
       * ├───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┤
       * │Br+│RWD│PLY│Vo+│W.B│               │   │Va+│Hu+│Sa+│Sp+│
       * ├───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┤
@@ -111,10 +111,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               └───┴───┴───┘   └───┴───┴───┘
       */
     [_MEDIA] = LAYOUT_split_3x5_3(
-        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    QK_BOOT,
+        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    KC_NO,
         KC_BRIU,   KC_MPRV,   KC_MPLY,   KC_VOLU,   K_BACK,                               KC_NO,     RGB_VAI,   RGB_HUI,   RGB_SAI,   RGB_SPI,
         KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               KC_NO,     RGB_VAD,   RGB_HUD,   RGB_SAD,   RGB_SPD,
-                                         MOU_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
+                                         MOU_ESC,   FCT_TAB,   ADJ_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
       * ┌───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┐
@@ -130,8 +130,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       */
     [_MOUSE] = LAYOUT_split_3x5_3(
         KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                VRSN,      KC_ACL0,   KC_ACL1,   KC_ACL2,   KC_NO,
-        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   QWERTY,                               KC_NO,     KC_MS_L,   KC_MS_U,   KC_MS_R,   KC_WH_U,
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     COLEMAK,                              KC_NO,     KC_WH_L,   KC_MS_D,   KC_WH_R,   KC_WH_D,
+        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_NO,     KC_MS_L,   KC_MS_U,   KC_MS_R,   KC_WH_U,
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_WH_L,   KC_MS_D,   KC_WH_R,   KC_WH_D,
                                          MOU_ESC,   FCT_TAB,   COD_SPC,        KC_BTN1,   KC_BTN2,   KC_BTN3
+    ),
+     /*
+      * ┌───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┐
+      * │   │   │   │   │   │               │   │   │   │   │   │
+      * ├───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┤
+      * │OPT│SFT│CTL│CMD│   │               │QWT│CMD│CTL│SFT│OPT│
+      * ├───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │               │CLM│WL │MD │WR │WD │
+      * └───┴───┴───┴───┴───┘               └───┴───┴───┴───┴───┘
+      *               ┌───┬───┬───┐   ┌───┬───┬───┐
+      *               │ESC│TAB│Spc│   │MB1│MB2│MB3│
+      *               └───┴───┴───┘   └───┴───┴───┘
+      */
+    [_ADJUST] = LAYOUT_split_3x5_3(
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_NO,     KC_NO,     KC_NO,     QK_BOOT,
+        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                QWERTY,    KC_RCMD,   KC_RCTL,   KC_RSFT,   KC_ROPT,
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                COLEMAK,   KC_NO,     KC_NO,     KC_NO,     KC_NO,  
+                                         MOU_ESC,   FCT_TAB,   ADJ_SPC,        COD_SPC,   FCT_BSPC,  MED_DEL
     )
 };

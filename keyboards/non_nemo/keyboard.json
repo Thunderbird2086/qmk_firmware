@@ -137,8 +137,8 @@
         "led_count": 2,
         "split_count": [1, 1],
         "layout": [
-            {"x": 100, "y": 16, "flags": 255},
-            {"x": 125, "y": 16, "flags": 255}
+            {"x": 100, "y": 16, "flags": 9},
+            {"x": 125, "y": 16, "flags": 9}
         ],
         "max_brightness": 150,
         "hue_steps": 32,
@@ -147,7 +147,7 @@
         "spd_steps": 20,
         "animations": {
             "alphas_mods": false,
-            "gradient_up_down": false,
+            "gradient_up_down": true,
             "gradient_left_right": true,
             "breathing": true,
             "band_sat": true,

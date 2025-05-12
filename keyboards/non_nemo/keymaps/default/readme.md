@@ -27,7 +27,10 @@ The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to 
   ![navigation](https://imgur.com/uZYmUjA.png)
 
 - MEDEA: Media, Power control, RGB control, and reset<br>
-  ![media](https://imgur.com/efUDfpM.png)
+  ![media](https://imgur.com/2rCen1l.png)
 
 - Mouse: mouse keys<br>
   ![mouse](https://imgur.com/JOxHz5D.png)
+
+- Adjust: chang base layer, and bootloader<br>
+  ![adjust](https://imgur.com/B2W5RaM.png)

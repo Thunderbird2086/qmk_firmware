@@ -5,6 +5,8 @@
 
 #include "quantum.h"
 
+#define XIAO_RGB_POWER_PIN  GP11
+
 static inline void led_num(const bool on) {
 #ifdef LED_NUM_LOCK_PIN
     gpio_set_pin_output(LED_NUM_LOCK_PIN);
