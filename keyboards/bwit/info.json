@@ -18,7 +18,7 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
-            "animation": "alphas_mods",
+            "animation": "breathing",
             "val": 150
         },
         "max_brightness": 150,
