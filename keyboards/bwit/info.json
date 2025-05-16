@@ -18,7 +18,7 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
-            "animation": "breathing",
+            "animation": "solid_reactive_nexus",
             "val": 150
         },
         "max_brightness": 150,
