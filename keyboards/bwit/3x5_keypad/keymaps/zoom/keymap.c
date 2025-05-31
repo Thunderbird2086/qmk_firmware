@@ -19,7 +19,6 @@ enum layer_names {
 #if defined(OS_DETECTION_ENABLE) && defined(DEFERRED_EXEC_ENABLE)
 
 #include "os_detection.h"
-#error is it?
 os_variant_t os_type;
 
 uint32_t custom_os_settings(uint32_t trigger_time, void *cb_arg) {
