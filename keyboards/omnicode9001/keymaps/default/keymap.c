@@ -3,12 +3,15 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    OC_ZOOM_VIDEO = SAFE_RANGE,
-	OC_ZOOM_AUDIO,
+    OC_ZV = QK_KB_0,	// Video On/Off
+    OC_ZA,				// Audio Mute/Unmute
+    OC_ZS,     			// Start/Stop Share Screen
+    OC_ZC,    			// Open Chat
+    OC_ZU,    			// Show/Hide Participants
+    OC_ZL,     			// Leave Meeting
+    OC_ZH,     			// Raise/Lower Hand
+    OC_ZR,     			// Start/Stop Recording
 };
-
-#define OC_ZV OC_ZOOM_VIDEO
-#define OC_ZA OC_ZOOM_AUDIO
 
 // Function to send a key combination for OS-specific actions
 void send_combo(uint16_t mod1, uint16_t mod2, uint16_t key) {
@@ -40,21 +43,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 	[2] = LAYOUT(
-		_______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		OC_ZL  ,          OC_ZR  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, KC_HOME, KC_UP  , KC_PGUP, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______, _______, _______, _______, _______, _______,          _______,                                    _______, _______, _______,
-		_______, KC_END , _______, KC_PGDN, _______, _______, _______, _______, OC_ZV  , OC_ZA  , _______,                   _______,              _______,              _______, _______, _______, _______,
-		_______, _______, _______,                   MO(3)  ,                            _______, _______, _______,          _______,     _______, _______, _______,     _______,          _______
+		OC_ZU  , _______, KC_HOME, KC_UP  , KC_END , KC_PGUP, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		OC_ZC  , _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______, _______, _______, _______, _______, _______,          _______,                                    _______, _______, _______,
+		OC_ZH  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,              _______,              _______, _______, _______, _______,
+		OC_ZA  , OC_ZV  , OC_ZS  ,                   MO(3)  ,                            _______, _______, _______,          _______,     _______, _______, _______,     _______,          _______
 	),
 
 	[3] = LAYOUT(
 		QK_BOOT,          DF(0)  , DF(1)  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,                                    _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,              _______,              _______, _______, _______, _______,
-		_______, _______, _______,                   _______,                            _______, _______, _______,          _______,     _______, _______, _______,     _______,          _______
+		_______, _______, _______, _______, _______, _______, _______, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		QK_RBT , _______, _______, _______, _______, _______, _______, RM_PREV, RM_TOGG, RM_NEXT, _______, _______,          _______,                                    _______, _______, _______,
+		_______, _______, _______, _______, _______, _______, _______, RM_HUED, RM_SATD, RM_VALD, RM_SPDD,                   _______,              _______,              _______, _______, _______, _______,
+		EE_CLR , _______, _______,                   _______,                            _______, _______, _______,          _______,     _______, _______, _______,     _______,          _______
 	),
 
 };
@@ -97,7 +100,114 @@ bool zoom_audio(bool pressed) {
 		default:
 			return true; // Do not process if the OS is not recognized
 	}
+	return false;
+}
 
+bool zoom_share(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_S);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_S);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_chat(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_H);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_H);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_participants(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_NO, KC_U);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_U);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_leave(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_NO, KC_W);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_Q);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_raise_hand(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LALT, KC_NO, KC_Y);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_Y);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_record(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_R);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_R);
+			break;
+		default:
+			return true;
+	}
 	return false;
 }
 
@@ -105,11 +215,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	bool result = true;
 
     switch(keycode) {
-		case OC_ZOOM_AUDIO:
+		case OC_ZA:
 			result = zoom_audio(record->event.pressed);
 			break;
-		case OC_ZOOM_VIDEO:
+		case OC_ZV:
 			result = zoom_video(record->event.pressed);
+			break;
+		case OC_ZS:
+			result = zoom_share(record->event.pressed);
+			break;
+		case OC_ZC:
+			result = zoom_chat(record->event.pressed);
+			break;
+		case OC_ZU:
+			result = zoom_participants(record->event.pressed);
+			break;
+		case OC_ZL:
+			result = zoom_leave(record->event.pressed);
+			break;
+		case OC_ZH:
+			result = zoom_raise_hand(record->event.pressed);
+			break;
+		case OC_ZR:
+			result = zoom_record(record->event.pressed);
 			break;
 		default:
 			result = true; // Allow other keycodes to be processed normally
@@ -123,7 +251,7 @@ uint32_t swap_cmd_opt(uint32_t trigger_time, void *cb_arg) {
   os_variant_t host = detected_host_os();
   uint16_t retry_ms = 500;
 
-  if (host == OS_MACOS || host == OS_IOS) {
+  if (host == OS_WINDOWS) {
     keymap_config.swap_lalt_lgui = true;
     keymap_config.swap_ralt_rgui = true;
     retry_ms = 0;
