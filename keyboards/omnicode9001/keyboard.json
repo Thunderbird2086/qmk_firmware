@@ -23,9 +23,15 @@
     "processor": "RP2040",
     "matrix_pins": {
         "cols": ["GP16", "GP17", "GP18", "GP19", "GP22", "GP21", "GP20"],
-        "rows": ["GP9", "GP10", "GP11", "GP15", "GP14", "GP12",
+        "rows": ["GP9",  "GP10", "GP11", "GP15", "GP14", "GP12",
                  "GP23", "GP24", "GP25", "GP26", "GP27", "GP28",
-                 "GP0", "GP1", "GP2", "GP3", "GP4", "GP5"]
+                 "GP0",  "GP1",  "GP2",  "GP3",  "GP4",  "GP5"]
+    },
+    "qmk": {
+        "locking": {
+            "enabled": true,
+            "resync": true
+        }
     },
     "indicators": {
         "scroll_lock": "GP6",
